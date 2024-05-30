@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Информаация</title>
+</head>
+<body>
+<h1> Info </h1>
+<form th:method="post" th:action="@{/saveUpdate}" th:object="${user}">
+    <input type="hidden"  name="_method" value="patch">
+
+    <label for="name" >Name</label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <br>
+    <label for="surname" >Surname</label>
+    <input type="text" th:field="*{surname}" id="surname"/>
+    <br>
+    <label for="email" >email</label>
+    <input type="text" th:field="*{email}" id="email"/>
+    <br>
+    <br>
+    <input type ="submit" value = "update">
+
+</form>
+</body>
+</html>
